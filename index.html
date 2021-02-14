@@ -18,13 +18,18 @@
       href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap"
       rel="stylesheet"
     />
+
     <link rel="stylesheet" href="./node_modules/sal.js/dist/sal.css" />
     <link rel="icon" type="image/png" sizes="72x72" href="images/favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/smooth-scrollbar/7.4.1/smooth-scrollbar.css"
+    />
 
     <title>Ngechu Mungai</title>
   </head>
   <body>
-    <div class="main-container">
+    <div class="main-container" id="my-scrollbar">
       <div class="container">
         <div class="navbar">
           <div class="nav">
@@ -36,15 +41,15 @@
             </p>
 
             <ul class="ul">
-              <li><a href="">Home</a></li>
-              <li><a href="">My_Work</a></li>
-              <li><a href="">Skills</a></li>
+              <li>Home</li>
+              <li id="projectsLink">My_Work</li>
+              <li id="skills">Skills</li>
             </ul>
           </div>
         </div>
         <div
           class="hero"
-          data-sal-duration="1500"
+          data-sal-duration="1200"
           data-sal="fade"
           data-sal-delay="100"
           data-sal-easing="ease-out-bounce"
@@ -58,16 +63,16 @@
               focused on an awesome<br />
               user journey.
             </h1>
-            <a><button>View My Projects</button></a>
+            <button id="projectsLink">View My Projects</button>
           </div>
           <div class="heroImage"></div>
         </div>
         <div
           class="tools"
           class="hero"
-          data-sal-duration="1500"
+          data-sal-duration="1200"
           data-sal="fade"
-          data-sal-delay="200"
+          data-sal-delay="100"
           data-sal-easing="ease-out-bounce"
         >
           <h1>My Tools <i class="fa fa-wrench" aria-hidden="true"></i></h1>
@@ -121,9 +126,10 @@
         </div>
         <div
           class="projects"
-          data-sal-duration="1500"
+          id="projects"
+          data-sal-duration="1200"
           data-sal="fade"
-          data-sal-delay="200"
+          data-sal-delay="100"
           data-sal-easing="ease-out-bounce"
         >
           <h1>My Projects</h1>
@@ -220,9 +226,10 @@
         </div>
         <div
           class="skills"
-          data-sal-duration="1500"
+          id="skillsT"
+          data-sal-duration="1200"
           data-sal="fade"
-          data-sal-delay="200"
+          data-sal-delay="100"
           data-sal-easing="ease-out-bounce"
         >
           <h1>My Skills</h1>
@@ -238,13 +245,14 @@
             <p>React</p>
             <p>Django</p>
             <p>Spring Boot</p>
+            <p>Node JS</p>
           </div>
         </div>
         <div
           class="socialLinks"
-          data-sal-duration="1500"
+          data-sal-duration="1200"
           data-sal="fade"
-          data-sal-delay="200"
+          data-sal-delay="100"
           data-sal-easing="ease-out-bounce"
         >
           <h1>Contacts</h1>
@@ -266,10 +274,29 @@
       </div>
     </div>
     <script src="./node_modules/sal.js/dist/sal.js"></script>
-    <script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scrollbar/8.5.2/smooth-scrollbar.js "></script>
+
+    <script type="module">
+      import jump from "./node_modules/jump.js/dist/jump.module.js";
+      //Scrollbar
+      var Scrollbar = window.Scrollbar;
+      Scrollbar.init(document.querySelector("#my-scrollbar"));
+      //Scroll animation
       sal({
-        threshold: 0.5,
+        threshold: 0.6,
         once: false,
+      });
+      //Jump JS
+      var projects = document.getElementById("projectsLink");
+
+      projects.addEventListener("click", function (event) {
+        jump("#projects");
+      });
+      var skills = document.getElementById("skills");
+
+      skills.addEventListener("click", function (event) {
+        jump("#skillsT");
       });
     </script>
   </body>

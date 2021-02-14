@@ -4,6 +4,9 @@
   box-sizing: border-box;
   background-color: rgb(0, 0, 0);
 }
+html {
+  scroll-behavior: smooth;
+}
 a {
   text-decoration: none;
   color: rgb(255, 183, 1);
@@ -14,10 +17,13 @@ ul li {
   list-style: none;
   text-decoration: none;
 }
+ul li:hover {
+  cursor: pointer;
+}
 .main-container {
   display: flex;
   justify-content: center;
-  height: 300vh;
+  height: 440vh;
 }
 
 .container {
@@ -25,10 +31,12 @@ ul li {
 
   margin: 0 auto;
   width: 80%;
+  height: inherit;
+  height: 100%;
 
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 0.3fr 2fr 1.5fr 2fr 2fr 2fr 1fr 1fr;
+  grid-template-rows: 0.3fr 1.5fr 1.5fr 2fr 2fr 1fr 0.5fr;
 
   grid-template-areas:
     "navbar navbar navbar"
@@ -78,7 +86,7 @@ ul li {
   display: flex;
   background-image: url(/images/logo.png);
   background-repeat: no-repeat;
-  background-position: 100% 40%;
+  background-position: 100% 20%;
 
   // background-attachment: fixed;
   bottom: 100px;
@@ -90,7 +98,7 @@ ul li {
   // padding-top: 5%;
   font-family: Josefin Sans;
   font-size: 24px;
-  margin-top: 10%;
+  margin-top: 5%;
 
   h3 {
     opacity: 0.3;
@@ -113,7 +121,7 @@ ul li {
   }
 }
 .projects {
-  margin-top: 10%;
+  margin-top: 5%;
   grid-area: projects;
   background-color: rgb(0, 0, 0);
   color: rgb(255, 183, 1);
@@ -208,7 +216,7 @@ ul li {
 }
 .socialLinks {
   grid-area: social;
-  margin-top: 10%;
+
   color: rgb(255, 183, 1);
   font-family: Josefin Sans;
   padding-bottom: 50px;
@@ -232,7 +240,7 @@ ul li {
 }
 .footer {
   grid-area: footer;
-  background-color: rgb(150, 108, 1);
+  background-color: rgb(255, 183, 1);
   padding-top: 20px;
   padding-bottom: 50px;
   display: flex;
@@ -278,6 +286,9 @@ ul li {
     color: black;
     background: rgb(255, 183, 1);
     box-shadow: 0 0 20px #ffb35c5d, 0 0 40px #ffb35c5d, 0 0 60px #ffb35c5d;
+  }
+  button:focus {
+    border: transparent;
   }
 }
 
