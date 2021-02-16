@@ -305,6 +305,7 @@ ul li:hover {
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   grid-area: social;
+  margin-top: -10%;
   color: #ffb701;
   font-family: Josefin Sans;
   padding-bottom: 50px;
