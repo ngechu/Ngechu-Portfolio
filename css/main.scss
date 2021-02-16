@@ -23,7 +23,19 @@ ul li:hover {
 .main-container {
   display: flex;
   justify-content: center;
-  height: 440vh;
+  .fa-arrow-up {
+    font-size: 30px;
+    color: rgb(255, 183, 1);
+    display: inline-block;
+
+    padding-left: 1%;
+    padding-top: 200%;
+    position: fixed;
+    bottom: 40px;
+  }
+  .fa-arrow-up:hover {
+    cursor: pointer;
+  }
 }
 
 .container {
@@ -62,7 +74,7 @@ ul li:hover {
     color: rgb(255, 183, 1);
     p {
       align-self: start;
-      font-size: x-large;
+      font-size: 140%;
       font-family: Josefin Sans;
       letter-spacing: 2px;
       border: 1px solid rgb(255, 224, 124);
@@ -86,18 +98,20 @@ ul li:hover {
   display: flex;
   background-image: url(/images/logo.png);
   background-repeat: no-repeat;
-  background-position: 100% 20%;
+  background-position: 100% 25%;
 
-  // background-attachment: fixed;
   bottom: 100px;
   float: right;
+  img {
+    width: 60%;
+  }
 }
 .tools {
   grid-area: tools;
   color: rgb(255, 183, 1);
   // padding-top: 5%;
   font-family: Josefin Sans;
-  font-size: 24px;
+  font-size: 150%;
   margin-top: 5%;
 
   h3 {
@@ -115,13 +129,13 @@ ul li:hover {
       width: auto;
     }
     .icons-item {
-      height: 100px;
-      width: 250px;
+      height: 5%;
+      width: 10%;
     }
   }
 }
 .projects {
-  margin-top: 5%;
+  margin-top: 2%;
   grid-area: projects;
   background-color: rgb(0, 0, 0);
   color: rgb(255, 183, 1);
@@ -131,20 +145,20 @@ ul li:hover {
   font-size: 24px;
   opacity: 0.9;
   .cardsLayout {
+    width: 100%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
+
     gap: 30px;
     .card {
       margin-top: 5%;
-
       border-radius: 5%;
-      height: 450px;
-      width: 300px;
-      background-color: rgb(29, 32, 32);
-      width: 100%;
       height: 550px;
+      width: 30%;
+      background-color: rgb(29, 32, 32);
       object-fit: cover;
-      object-position: 50% 50%;
+      width: 100%;
+
       transition: margin-top 1.5s;
       img {
         border-radius: 1%;
@@ -170,6 +184,9 @@ ul li:hover {
           display: inline-block;
           background-color: inherit;
         }
+        .icons-item {
+          background-color: inherit;
+        }
       }
     }
     .card:hover {
@@ -181,7 +198,8 @@ ul li:hover {
 .skills {
   grid-area: skills;
   font-family: Josefin Sans;
-  margin-top: 10%;
+  padding-top: 10%;
+  align-items: center;
 
   h1 {
     text-align: start;
@@ -231,7 +249,6 @@ ul li:hover {
   .socialMedia {
     display: flex;
     justify-content: space-around;
-    padding-top: 5%;
 
     p {
       padding-top: 12px;
@@ -252,7 +269,7 @@ ul li:hover {
   p {
     color: rgb(0, 0, 0);
     background-color: inherit;
-    font-size: 24px;
+    font-size: 160%;
     font-family: Josefin Sans;
   }
 }
@@ -266,7 +283,9 @@ ul li:hover {
     font-family: "Poppins";
     display: inline-block;
     text-align: left;
-    font-size: 40px;
+    font-size: clamp(30px, 6vh, 80px);
+
+    background-color: inherit;
 
     opacity: 0.5;
   }
@@ -301,4 +320,78 @@ ul li:hover {
 }
 .fa-eye a:hover {
   transform: scale(1.15);
+}
+
+//=====================================================================================================/
+//Make Navbar responsive
+//====================================================================================================
+
+//================================================================================================//
+// MEDIA QUERIES
+//=================================================================================================//
+
+@media only screen and (max-width: 600px) {
+  .ul li {
+    display: none;
+  }
+  .nav {
+    p {
+      margin-left: -10px;
+    }
+  }
+  .hero {
+    img {
+      display: none;
+    }
+  }
+
+  .tagline {
+    margin-top: -50%;
+    font-family: "Poppins";
+
+    h1 {
+      color: rgb(255, 235, 198);
+      font-family: "Poppins";
+      display: inline-block;
+      text-align: left;
+      font-size: clamp(20px, 6vh, 60px);
+
+      background-color: inherit;
+
+      opacity: 0.6;
+    }
+    button {
+      color: rgb(255, 235, 198);
+      padding: 2% 3%;
+      background-color: rgb(0, 0, 0);
+      border: 0.3px solid rgba(255, 235, 198, 0.473);
+      margin-top: 6%;
+      font-family: "Poppins";
+      position: relative;
+      overflow: hidden;
+      transition: 0.5s;
+    }
+    button:hover {
+      cursor: pointer;
+      color: black;
+      background: rgb(255, 183, 1);
+      box-shadow: 0 0 20px #ffb35c5d, 0 0 40px #ffb35c5d, 0 0 60px #ffb35c5d;
+    }
+    button:focus {
+      border: transparent;
+    }
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.5fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      "navbar"
+      "hero"
+      "tools tools tools"
+      "projects "
+      "skill"
+      "social"
+      "footer";
+  }
 }

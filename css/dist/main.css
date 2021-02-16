@@ -1,0 +1,301 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  background-color: black;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: #ffb701;
+  background-color: inherit;
+  border: none;
+}
+
+ul li {
+  list-style: none;
+  text-decoration: none;
+}
+
+ul li:hover {
+  cursor: pointer;
+}
+
+.main-container {
+  display: flex;
+  justify-content: center;
+}
+.main-container .fa-arrow-up {
+  font-size: 30px;
+  color: #ffb701;
+  float: right;
+  padding-right: 3%;
+  padding-top: 200%;
+  position: sticky;
+  bottom: 0;
+  display: inline-block;
+}
+.main-container .fa-arrow-up:hover {
+  cursor: pointer;
+}
+
+.container {
+  overflow-wrap: normal;
+  margin: 0 auto;
+  width: 80%;
+  height: inherit;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 0.3fr 1.5fr 1.5fr 2fr 2fr 1fr 0.5fr;
+  grid-template-areas: "navbar navbar navbar" "hero hero hero" "tools tools tools" "projects  projects projects" "skills skills skills" "social social social" "footer footer footer";
+}
+
+.navbar {
+  grid-area: navbar;
+  width: 90%;
+  margin-top: 3%;
+}
+.navbar .nav {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  margin: auto auto;
+  color: #ffb701;
+}
+.navbar .nav p {
+  align-self: start;
+  font-size: x-large;
+  font-family: Josefin Sans;
+  letter-spacing: 2px;
+  border: 1px solid #ffe07c;
+  padding: 2%;
+}
+.navbar .nav .ul {
+  display: flex;
+  font-family: Josefin Sans;
+  gap: 20%;
+  align-items: center;
+}
+.navbar .nav .ul li {
+  font-size: 20px;
+  transition: 0.5s;
+}
+
+.hero {
+  grid-area: hero;
+  display: flex;
+  background-image: url(/images/logo.png);
+  background-repeat: no-repeat;
+  background-position: 100% 20%;
+  bottom: 100px;
+  float: right;
+}
+
+.tools {
+  grid-area: tools;
+  color: #ffb701;
+  font-family: Josefin Sans;
+  font-size: 24px;
+  margin-top: 5%;
+}
+.tools h3 {
+  opacity: 0.3;
+  margin-top: 2px;
+}
+.tools .icons {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top: 80px;
+}
+.tools .icons img {
+  height: 100px;
+  width: auto;
+}
+.tools .icons .icons-item {
+  height: 100px;
+  width: 250px;
+}
+
+.projects {
+  margin-top: 5%;
+  grid-area: projects;
+  background-color: black;
+  color: #ffb701;
+  padding-top: 20px;
+  font-family: Josefin Sans;
+  font-size: 24px;
+  opacity: 0.9;
+}
+.projects .cardsLayout {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 30px;
+}
+.projects .cardsLayout .card {
+  margin-top: 5%;
+  border-radius: 5%;
+  height: 450px;
+  width: 300px;
+  background-color: #1d2020;
+  width: 100%;
+  height: 550px;
+  object-fit: cover;
+  object-position: 50% 50%;
+  transition: margin-top 1.5s;
+}
+.projects .cardsLayout .card img {
+  border-radius: 1%;
+}
+.projects .cardsLayout .card p {
+  text-align: center;
+  background-color: inherit;
+  margin-top: 50px;
+  padding: 0 5px;
+  opacity: 0.8;
+}
+.projects .cardsLayout .card .links {
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-between;
+  background-color: inherit;
+}
+.projects .cardsLayout .card .links .fa-eye {
+  margin-top: 10px;
+  display: inline-block;
+  background-color: inherit;
+}
+.projects .cardsLayout .card:hover {
+  margin-top: 3%;
+}
+
+.skills {
+  grid-area: skills;
+  font-family: Josefin Sans;
+  margin-top: 10%;
+  align-items: center;
+}
+.skills h1 {
+  text-align: start;
+  color: #ffb701;
+  opacity: 0.6;
+  background-color: inherit;
+  display: inline-block;
+  font-size: 50px;
+}
+.skills .languages {
+  display: flex;
+  justify-content: space-around;
+}
+.skills .languages p {
+  color: #ffb701;
+  background-color: inherit;
+  font-size: 30px;
+  margin-top: 40px;
+}
+.skills .framework {
+  display: flex;
+  padding-top: 5%;
+  color: #ffb701;
+  justify-content: space-around;
+  padding-bottom: 10%;
+}
+.skills .framework p {
+  background-color: inherit;
+  font-size: 30px;
+}
+
+.socialLinks {
+  grid-area: social;
+  color: #ffb701;
+  font-family: Josefin Sans;
+  padding-bottom: 50px;
+  height: 300px;
+}
+.socialLinks h1 {
+  font-size: 50px;
+}
+.socialLinks img {
+  height: 50px;
+  width: auto;
+}
+.socialLinks .socialMedia {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 5%;
+}
+.socialLinks .socialMedia p {
+  padding-top: 12px;
+}
+
+.footer {
+  grid-area: footer;
+  background-color: #ffb701;
+  padding-top: 20px;
+  padding-bottom: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 16px;
+}
+.footer p {
+  color: black;
+  background-color: inherit;
+  font-size: 24px;
+  font-family: Josefin Sans;
+}
+
+.tagline {
+  margin-top: 6%;
+  font-family: "Poppins";
+}
+.tagline h1 {
+  color: #ffebc6;
+  font-family: "Poppins";
+  display: inline-block;
+  text-align: left;
+  font-size: 40px;
+  opacity: 0.5;
+}
+.tagline button {
+  color: #ffebc6;
+  padding: 2% 3%;
+  background-color: black;
+  border: 0.3px solid rgba(255, 235, 198, 0.473);
+  margin-top: 8%;
+  font-family: "Poppins";
+  position: relative;
+  overflow: hidden;
+  transition: 0.5s;
+}
+.tagline button:hover {
+  cursor: pointer;
+  color: black;
+  background: #ffb701;
+  box-shadow: 0 0 20px #ffb35c5d, 0 0 40px #ffb35c5d, 0 0 60px #ffb35c5d;
+}
+.tagline button:focus {
+  border: transparent;
+}
+
+.fa-wrench {
+  color: #7a7a7a !important;
+}
+
+.fa-eye a {
+  transform: scale(1);
+  transition: transform 1.5s;
+}
+
+.fa-eye a:hover {
+  transform: scale(1.15);
+}

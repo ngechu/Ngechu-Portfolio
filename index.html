@@ -21,15 +21,12 @@
 
     <link rel="stylesheet" href="./node_modules/sal.js/dist/sal.css" />
     <link rel="icon" type="image/png" sizes="72x72" href="images/favicon.ico" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/smooth-scrollbar/7.4.1/smooth-scrollbar.css"
-    />
 
     <title>Ngechu Mungai</title>
   </head>
   <body>
     <div class="main-container" id="my-scrollbar">
+      <i id="hero" class="fa fa-arrow-up" aria-hidden="true"></i>
       <div class="container">
         <div class="navbar">
           <div class="nav">
@@ -63,13 +60,12 @@
               focused on an awesome<br />
               user journey.
             </h1>
-            <button id="projectsLink">View My Projects</button>
+            <button id="projectsLinks">View My Projects</button>
           </div>
           <div class="heroImage"></div>
         </div>
         <div
           class="tools"
-          class="hero"
           data-sal-duration="1200"
           data-sal="fade"
           data-sal-delay="100"
@@ -85,12 +81,7 @@
               srcset=""
             />
             <img class="icons-item" src="./images/react.svg" alt="" srcset="" />
-            <img
-              class="icons-item"
-              src="./images/django-community.svg"
-              alt=""
-              srcset=""
-            />
+
             <img
               class="icons-item"
               src="./images/spring.svg"
@@ -117,10 +108,16 @@
             />
             <img
               class="icons-item"
-              style="width: 180px"
               src="./images/nodejs-icon.svg"
               alt=""
               srcset=""
+            />
+            <img
+              class="icons-item"
+              src="./images/django-community.svg"
+              alt=""
+              srcset=""
+              style="width: 20%"
             />
           </div>
         </div>
@@ -150,10 +147,13 @@
               </p>
 
               <div class="links">
-                <a href="http://">
+                <a href="https://ngechu.github.io/FastFood_Project/">
                   <i title="View Site" class="fa fa-eye" aria-hidden="true"> </i
                 ></a>
-                <a href="https://github.com/ngechu/FastFood_Project">
+                <a
+                  href="https://github.com/ngechu/FastFood_Project"
+                  target="_blank"
+                >
                   <img
                     style="height: 40px; width: auto"
                     class="icons-item"
@@ -224,10 +224,11 @@
             </div>
           </div>
         </div>
+
         <div
           class="skills"
           id="skillsT"
-          data-sal-duration="1200"
+          data-sal-duration="1000"
           data-sal="fade"
           data-sal-delay="100"
           data-sal-easing="ease-out-bounce"
@@ -270,33 +271,64 @@
         <div class="footer">
           <p>Copyright &copy; 2021</p>
           <p>Ngechu Mungai</p>
+          <p>v 1.0</p>
         </div>
       </div>
     </div>
     <script src="./node_modules/sal.js/dist/sal.js"></script>
+    <script src="./index.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scrollbar/8.5.2/smooth-scrollbar.js "></script>
 
     <script type="module">
       import jump from "./node_modules/jump.js/dist/jump.module.js";
+
       //Scrollbar
       var Scrollbar = window.Scrollbar;
       Scrollbar.init(document.querySelector("#my-scrollbar"));
+
+      //Disable animations @768
+      if (window.matchMedia("(max-width: 768px)")) {
+        let scrollAnimation = sal();
+        scrollAnimation.disable();
+      }
       //Scroll animation
       sal({
         threshold: 0.6,
         once: false,
       });
       //Jump JS
+
+      var hero = document.getElementById("hero");
+
+      hero.addEventListener("click", function (event) {
+        jump(".container", {
+          duration: 500,
+        });
+      });
+
       var projects = document.getElementById("projectsLink");
 
       projects.addEventListener("click", function (event) {
-        jump("#projects");
+        jump("#projects", {
+          duration: 1000,
+        });
+      });
+
+      var projectsLink = document.getElementById("projectsLinks");
+
+      projectsLink.addEventListener("click", function (event) {
+        jump("#projects", {
+          duration: 1000,
+        });
       });
       var skills = document.getElementById("skills");
 
       skills.addEventListener("click", function (event) {
-        jump("#skillsT");
+        jump("#skillsT", {
+          duration: 1000,
+          offset: -100,
+        });
       });
     </script>
   </body>

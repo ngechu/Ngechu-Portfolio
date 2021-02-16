@@ -33,7 +33,20 @@ ul li:hover {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  height: 440vh;
+}
+
+.main-container .fa-arrow-up {
+  font-size: 30px;
+  color: #ffb701;
+  display: inline-block;
+  padding-left: 1%;
+  padding-top: 200%;
+  position: fixed;
+  bottom: 40px;
+}
+
+.main-container .fa-arrow-up:hover {
+  cursor: pointer;
 }
 
 .container {
@@ -76,7 +89,7 @@ ul li:hover {
   -ms-flex-item-align: start;
       -ms-grid-row-align: start;
       align-self: start;
-  font-size: x-large;
+  font-size: 140%;
   font-family: Josefin Sans;
   letter-spacing: 2px;
   border: 1px solid #ffe07c;
@@ -110,9 +123,13 @@ ul li:hover {
   display: flex;
   background-image: url(/images/logo.png);
   background-repeat: no-repeat;
-  background-position: 100% 20%;
+  background-position: 100% 25%;
   bottom: 100px;
   float: right;
+}
+
+.hero img {
+  width: 60%;
 }
 
 .tools {
@@ -122,7 +139,7 @@ ul li:hover {
   grid-area: tools;
   color: #ffb701;
   font-family: Josefin Sans;
-  font-size: 24px;
+  font-size: 150%;
   margin-top: 5%;
 }
 
@@ -150,12 +167,12 @@ ul li:hover {
 }
 
 .tools .icons .icons-item {
-  height: 100px;
-  width: 250px;
+  height: 5%;
+  width: 10%;
 }
 
 .projects {
-  margin-top: 5%;
+  margin-top: 2%;
   -ms-grid-row: 4;
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
@@ -169,27 +186,25 @@ ul li:hover {
 }
 
 .projects .cardsLayout {
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   gap: 30px;
 }
 
 .projects .cardsLayout .card {
   margin-top: 5%;
   border-radius: 5%;
-  height: 450px;
-  width: 300px;
-  background-color: #1d2020;
-  width: 100%;
   height: 550px;
+  width: 30%;
+  background-color: #1d2020;
   -o-object-fit: cover;
      object-fit: cover;
-  -o-object-position: 50% 50%;
-     object-position: 50% 50%;
+  width: 100%;
   -webkit-transition: margin-top 1.5s;
   transition: margin-top 1.5s;
 }
@@ -225,6 +240,10 @@ ul li:hover {
   background-color: inherit;
 }
 
+.projects .cardsLayout .card .links .icons-item {
+  background-color: inherit;
+}
+
 .projects .cardsLayout .card:hover {
   margin-top: 3%;
 }
@@ -235,7 +254,10 @@ ul li:hover {
   -ms-grid-column-span: 3;
   grid-area: skills;
   font-family: Josefin Sans;
-  margin-top: 10%;
+  padding-top: 10%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .skills h1 {
@@ -304,7 +326,6 @@ ul li:hover {
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  padding-top: 5%;
 }
 
 .socialLinks .socialMedia p {
@@ -338,7 +359,7 @@ ul li:hover {
 .footer p {
   color: black;
   background-color: inherit;
-  font-size: 24px;
+  font-size: 160%;
   font-family: Josefin Sans;
 }
 
@@ -352,7 +373,8 @@ ul li:hover {
   font-family: "Poppins";
   display: inline-block;
   text-align: left;
-  font-size: 40px;
+  font-size: clamp(30px, 6vh, 80px);
+  background-color: inherit;
   opacity: 0.5;
 }
 
@@ -397,5 +419,59 @@ ul li:hover {
 .fa-eye a:hover {
   -webkit-transform: scale(1.15);
           transform: scale(1.15);
+}
+
+@media only screen and (max-width: 600px) {
+  .ul li {
+    display: none;
+  }
+  .nav p {
+    margin-left: -10px;
+  }
+  .hero img {
+    display: none;
+  }
+  .tagline {
+    margin-top: -50%;
+    font-family: "Poppins";
+  }
+  .tagline h1 {
+    color: #ffebc6;
+    font-family: "Poppins";
+    display: inline-block;
+    text-align: left;
+    font-size: clamp(20px, 6vh, 60px);
+    background-color: inherit;
+    opacity: 0.6;
+  }
+  .tagline button {
+    color: #ffebc6;
+    padding: 2% 3%;
+    background-color: black;
+    border: 0.3px solid rgba(255, 235, 198, 0.473);
+    margin-top: 6%;
+    font-family: "Poppins";
+    position: relative;
+    overflow: hidden;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+  }
+  .tagline button:hover {
+    cursor: pointer;
+    color: black;
+    background: #ffb701;
+    -webkit-box-shadow: 0 0 20px #ffb35c5d, 0 0 40px #ffb35c5d, 0 0 60px #ffb35c5d;
+            box-shadow: 0 0 20px #ffb35c5d, 0 0 40px #ffb35c5d, 0 0 60px #ffb35c5d;
+  }
+  .tagline button:focus {
+    border: transparent;
+  }
+  .container {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: 0.5fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 0.5fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas: "navbar" "hero" "tools tools tools" "projects " "skill" "social" "footer";
+  }
 }
 /*# sourceMappingURL=main.css.map */
