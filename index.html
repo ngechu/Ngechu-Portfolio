@@ -19,14 +19,13 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="./node_modules/sal.js/dist/sal.css" />
+    <link rel="stylesheet" href="./css/sal.css" />
     <link rel="icon" type="image/png" sizes="72x72" href="images/favicon.ico" />
 
     <title>Ngechu Mungai</title>
   </head>
   <body>
     <div class="main-container" id="my-scrollbar">
-      <i id="hero" class="fa fa-arrow-up" aria-hidden="true"></i>
       <div class="container">
         <div class="navbar">
           <div class="nav">
@@ -278,28 +277,23 @@
           <p>Ngechu Mungai</p>
           <p>v 1.0</p>
         </div>
+        <i id="hero" class="fa fa-arrow-up" aria-hidden="true"></i>
       </div>
     </div>
-    <script src="./node_modules/sal.js/dist/sal.js"></script>
-    <script src="./index.js"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scrollbar/8.5.2/smooth-scrollbar.js "></script>
+    <script src="./sal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jump.js/dist/jump.min.js"></script>
 
     <script type="module">
-      import jump from "./node_modules/jump.js/dist/jump.module.js";
-
-      //Scrollbar
-      var Scrollbar = window.Scrollbar;
-      Scrollbar.init(document.querySelector("#my-scrollbar"));
+      const jump = window.Jump;
 
       //Disable animations @768
       if (window.matchMedia("(max-width: 768px)")) {
         let scrollAnimation = sal();
-        scrollAnimation.disable();
+        scrollAnimation.disable;
       }
       //Scroll animation
       sal({
-        threshold: 0.6,
+        threshold: 0.8,
         once: false,
       });
       //Jump JS

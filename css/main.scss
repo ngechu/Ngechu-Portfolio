@@ -23,15 +23,17 @@ ul li:hover {
 .main-container {
   display: flex;
   justify-content: center;
+  scroll-behavior: smooth;
+  height: 100%;
   .fa-arrow-up {
     font-size: 30px;
     color: rgb(255, 183, 1);
     display: inline-block;
 
-    padding-left: 1%;
     padding-top: 200%;
     position: fixed;
     bottom: 40px;
+    left: 16px;
   }
   .fa-arrow-up:hover {
     cursor: pointer;
@@ -383,8 +385,8 @@ ul li:hover {
   }
 
   .container {
-    grid-template-columns: 1fr;
-    grid-template-rows: 0.5fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1.5fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-areas:
       "navbar"
       "hero"

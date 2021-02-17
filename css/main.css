@@ -33,16 +33,18 @@ ul li:hover {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  scroll-behavior: smooth;
+  height: 100%;
 }
 
 .main-container .fa-arrow-up {
   font-size: 30px;
   color: #ffb701;
   display: inline-block;
-  padding-left: 1%;
   padding-top: 200%;
   position: fixed;
   bottom: 40px;
+  left: 16px;
 }
 
 .main-container .fa-arrow-up:hover {
@@ -467,10 +469,10 @@ ul li:hover {
     border: transparent;
   }
   .container {
-    -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
-    -ms-grid-rows: 0.5fr 1fr 1fr 1fr 1fr 1fr;
-        grid-template-rows: 0.5fr 1fr 1fr 1fr 1fr 1fr;
+    -ms-grid-columns: 1.5fr;
+        grid-template-columns: 1.5fr;
+    -ms-grid-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
         grid-template-areas: "navbar" "hero" "tools tools tools" "projects " "skill" "social" "footer";
   }
 }
